@@ -5,3 +5,4 @@
 -- +----------+
 
 
+select count(*) from reviews

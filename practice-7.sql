@@ -17,3 +17,10 @@
 -- | Entire villa                        | 75       | 2021-10-12                 |
 
 
+select listings.property_type, 
+count(*) AS review_count,
+max(reviews.date_reviewed) AS latest_review_date
+from listings
+join reviews On listings.id = reviews.listing_id
+group by listings.property_type
+order by listings.property_type
